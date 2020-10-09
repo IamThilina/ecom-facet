@@ -4,14 +4,15 @@ import services from "./services";
 export default () => {
   const [isLoading, setIsLoading] = React.useState(true);
   const [categories, setCategories] = React.useState([]);
+  const [rootId, setRootId] = React.useState(null);
 
   React.useEffect(() => {
 
    const getCategories = async ()=> {
      const result = await services.getCategories();
-     setCategories(result);
+     setCategories(result.categories);
+     setRootId(result.rootId);
      setIsLoading(false);
-
    }
 
    getCategories();
