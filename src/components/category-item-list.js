@@ -5,7 +5,7 @@ import CategoryItem from "./category-item";
 const CategoryItemList = ({ categories }) => {
     const {categoryMap} = useCategories();
 
-    return <div style={{marginLeft: '30px'}}>
+    return <div style={{marginLeft: '30px', marginTop: "10px"}}>
         {
             categories && categories.map((categoryId) => {
                 const {parent, name, count} = categoryMap[categoryId]

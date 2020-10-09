@@ -1,3 +1,5 @@
+const initialState = {};
+
 export default (state = {}, {type, payload}) => {
     switch(type){
         case "ADD":
@@ -10,6 +12,8 @@ export default (state = {}, {type, payload}) => {
             return {
                 ...state
             }
+        case "REMOVE_ALL":
+            return initialState;
         default:
             return state
     }
