@@ -1,6 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom';
 
+import providers from "./providers";
 import App from './App'
 
-ReactDOM.render(<App/>, document.querySelector('#root'));
+const {CategoriesProvider} = providers;
+
+ReactDOM.render(<CategoriesProvider><App/></CategoriesProvider>, document.querySelector('#root'));
