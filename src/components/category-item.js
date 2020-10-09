@@ -1,5 +1,5 @@
 import * as React from "react";
-import {useDispatch} from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
 import { AddCircleRounded, RemoveCircleRounded } from "@material-ui/icons";
 import Checkbox from "@material-ui/core/Checkbox";
 import {useCategories} from "../hooks";
@@ -7,6 +7,7 @@ import CategoryItemList from "./category-item-list";
 
 const CategoryItem = ({id, count, name}) => {
     const {parentMap} = useCategories();
+    const categoryStatus = useSelector(({categoryStatus}) => categoryStatus);
     const dispatch = useDispatch();
     const [checked, setChecked] = React.useState(false);
     const [toggled, setToggled] = React.useState(false);
@@ -31,7 +32,7 @@ const CategoryItem = ({id, count, name}) => {
             parentMap[id] ? toggled ? <RemoveCircleRounded color="action" onClick={onClick}/> : <AddCircleRounded color="action" onClick={onClick}/> : null
         }
         <Checkbox
-            checked={checked}
+            checked={!!categoryStatus[id]}
             onChange={handleChange}
             inputProps={{ 'aria-label': 'primary checkbox' }}
         />
