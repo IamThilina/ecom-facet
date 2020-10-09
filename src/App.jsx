@@ -1,17 +1,22 @@
 import React from "react";
 import services from "./services";
+import factory from "./factories";
+import CategoryItemList from "./components/category-item-list";
 
 export default () => {
   const [isLoading, setIsLoading] = React.useState(true);
-  const [categories, setCategories] = React.useState([]);
   const [rootId, setRootId] = React.useState(null);
+  const [categoryMap, setCategoryMap] = React.useState({});
+  const [parentMap, setParentMap] = React.useState({});
 
   React.useEffect(() => {
 
    const getCategories = async ()=> {
-     const result = await services.getCategories();
-     setCategories(result.categories);
-     setRootId(result.rootId);
+     const {categories, rootId} = await services.getCategories();
+     const {categoryMap, parentMap} = factory.generateCategoryMaps(categories);
+     setRootId(rootId);
+     setCategoryMap(categoryMap);
+     setParentMap(parentMap);
      setIsLoading(false);
    }
 
@@ -22,7 +27,9 @@ export default () => {
     <h1>Otrium Challenge</h1>
     {
       isLoading ? "Loading . . ." :
-          categories.map((category) => <div >{category.name}</div>)
+          (<div>
+            <CategoryItemList parentMap={parentMap} categories={parentMap[rootId]} categoryMap={categoryMap}/>
+          </div>)
     }
   </div>
 };
