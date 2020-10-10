@@ -7,6 +7,8 @@ import rootReducer from "./reducers";
 import providers from "./providers";
 import App from "./components/app";
 
+import "./index.scss";
+
 const { CategoriesProvider } = providers;
 
 const store = createStore(rootReducer);

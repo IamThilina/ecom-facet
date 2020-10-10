@@ -8,7 +8,7 @@ const App: React.FunctionComponent = () => {
 
   return (
     (rootId !== null && parentMap && categoryMap && (
-      <div>
+      <div className="facet-panel">
         <h1>Otrium Challenge</h1>
         <SelectedCategories />
         <div>
