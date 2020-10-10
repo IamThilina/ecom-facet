@@ -12,7 +12,7 @@ const SelectedCategories = () => {
         <h3> Selected Categories</h3>
         {
             selectedCategories.length > 0 ? <React.Fragment>
-                {selectedCategories.map((category) => <Chip label={category.name} onDelete={()=>dispatch({type: "REMOVE", payload: {...category}})}/>)}
+                {selectedCategories.map((category) => <Chip key={category.id} label={category.name} onDelete={()=>dispatch({type: "REMOVE", payload: {...category}})}/>)}
                 <Button
                     size="small"
                     variant="contained"

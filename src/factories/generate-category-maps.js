@@ -14,6 +14,7 @@ export default (categories) => {
             parentMap[category.parent].push(category.id);
         }
         categoryMap[category.id] = {
+            id: category.id,
             name: category.name,
             count: category.count,
             parent: category.parent,

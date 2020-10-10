@@ -18,7 +18,6 @@ const CategoryItem = ({id, count, name}) => {
     }
 
     const handleChange = (event) => {
-        console.log(event.target.checked)
         if(event.target.checked) {
             dispatch({type: "ADD", payload: {name, id}});
         } else {
@@ -34,11 +33,11 @@ const CategoryItem = ({id, count, name}) => {
         <Checkbox
             checked={!!categoryStatus[id]}
             onChange={handleChange}
-            inputProps={{ 'aria-label': 'primary checkbox' }}
+            color="default"
         />
         {`${name} (${count})`}
         {
-            toggled && <CategoryItemList categories={parentMap[id]}/>
+            toggled && <CategoryItemList categoryIds={parentMap[id]}/>
         }
     </div>;
 };

@@ -10,7 +10,7 @@ export default () => {
       <h1>Otrium Challenge</h1>
       <SelectedCategories />
       <div>
-        <CategoryItemList categories={parentMap[rootId]}/>
+        <CategoryItemList categoryIds={parentMap[rootId]}/>
       </div>
     </div>));
 
