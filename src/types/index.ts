@@ -1,12 +1,21 @@
-import category from "./category";
-import categories from "./categories";
-import categoryMap from "./category-map";
-import parentMap from "./parent-map";
-import categoryStatus from "./category-status";
-import selectedCategories from "./selected-categories";
+import type category from "./category";
+import type categories from "./categories";
+import type categoryMap from "./category-map";
+import type parentMap from "./parent-map";
+import type categoryStatus from "./category-status";
+import type selectedCategory from "./selected-category";
+import type selectedCategories from "./selected-categories";
+import type store from "./store";
+import type action from "./action"
+import type categoriesContext from "./categories-context"
 
-export const Category = category;
-export const Categories = categories;
-export const CategoryMap = categoryMap;
-export const CategoryStatus = categoryStatus;
-export const SelectedCategories = selectedCategories;
+export type Category = category;
+export type Categories = categories;
+export type CategoryMap = categoryMap;
+export type ParentMap = parentMap;
+export type CategoryStatus = categoryStatus;
+export type SelectedCategory = selectedCategory;
+export type SelectedCategories = selectedCategories;
+export type Store = store;
+export type Action = action;
+export type CategoriesContext = categoriesContext;

@@ -2,12 +2,17 @@ import React from "react";
 import contexts from "../contexts"
 import services from "../services";
 import factory from "../factories";
+import {CategoryMap, ParentMap} from "../types";
 
-export default ({children}) => {
+interface Props {
+    children: React.ReactNode
+}
+
+const CategoriesProvider: React.FunctionComponent<Props> = ({children}) => {
     const { CategoriesContext } = contexts;
-    const [rootId, setRootId] = React.useState(null);
-    const [categoryMap, setCategoryMap] = React.useState(null);
-    const [parentMap, setParentMap] = React.useState(null);
+    const [rootId, setRootId] = React.useState<string|null>(null);
+    const [categoryMap, setCategoryMap] = React.useState<CategoryMap|null>(null);
+    const [parentMap, setParentMap] = React.useState<ParentMap|null>(null);
 
     React.useEffect(() => {
         const getCategories = async ()=> {
@@ -23,3 +28,4 @@ export default ({children}) => {
 
     return <CategoriesContext.Provider value={{ categoryMap, parentMap, rootId }}>{children}</CategoriesContext.Provider>;
 }
+export default CategoriesProvider;

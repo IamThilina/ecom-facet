@@ -1,6 +1,8 @@
-const initialState = {};
+import {CategoryStatus, SelectedCategory, Action} from "../types";
 
-export default (state = {}, {type, payload}) => {
+const initialState: CategoryStatus = {};
+
+export default (state = initialState, {type, payload}: Action) => {
     switch(type){
         case "ADD":
             return {
@@ -15,7 +17,7 @@ export default (state = {}, {type, payload}) => {
         case "REMOVE_ALL":
             return initialState;
         case "SELECT_ALL_SUB_CATEGORY":
-            const subCategoryStatus = payload.reduce((status, category) =>{
+            const subCategoryStatus = payload.reduce((status: CategoryStatus, category: SelectedCategory) =>{
                 status[category.id] = true
                 return status;
             }, {});
@@ -24,7 +26,7 @@ export default (state = {}, {type, payload}) => {
                 ...subCategoryStatus
             };
         case "REMOVE_ALL_SUB_CATEGORY":
-            payload.forEach((category) => delete state[category.id]);
+            payload.forEach((category: SelectedCategory) => delete state[category.id]);
             return {
                 ...state
             };

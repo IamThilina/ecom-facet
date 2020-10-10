@@ -1,7 +1,4 @@
-interface SelectedCategory  {
-    id: string;
-    name: string;
-}
+import type SelectedCategory from "./selected-category";
 
 type SelectedCategories = Array<SelectedCategory>;
 

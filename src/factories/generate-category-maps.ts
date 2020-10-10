@@ -1,12 +1,14 @@
+import {CategoryMap, ParentMap, Category, Categories} from "../types";
+
 /*
 * generate two distinct maps of categories and parents,
 * so that we can easily traverse the category graph using them
 * */
-export default (categories) => {
-    const categoryMap = {};
-    const parentMap = {};
+export default (categories: Categories) => {
+    const categoryMap: CategoryMap = {};
+    const parentMap: ParentMap = {};
 
-    categories.forEach((category) => {
+    categories.forEach((category: Category) => {
         if(parentMap[category.parent])
             parentMap[category.parent].push(category.id);
         else{
