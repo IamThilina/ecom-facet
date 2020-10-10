@@ -52,7 +52,6 @@ describe("CategoryItem component", () => {
     const { getByRole } = render(<CategoryItem name="Item-1" count={1} id="001" />);
 
     fireEvent.click(getByRole("checkbox"));
-    // expect(getByRole("checkbox")).toBeChecked();
     expect(mockedDispatch).toBeCalledTimes(1);
     expect(mockedDispatch).nthCalledWith(1, { type: "ADD", payload: { name: "Item-1", id: "001" } });
   });

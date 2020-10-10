@@ -21,10 +21,11 @@ const CategoryItemList: React.FunctionComponent<Props> = ({ categoryIds }) => {
   ]);
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setChecked(!checked);
     if (event.target.checked) {
+      setChecked(true);
       dispatch({ type: "SELECT_ALL_SUB_CATEGORY", payload: categories });
     } else {
+      setChecked(false);
       dispatch({ type: "REMOVE_ALL_SUB_CATEGORY", payload: categories });
     }
   };
