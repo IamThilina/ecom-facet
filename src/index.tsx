@@ -5,7 +5,7 @@ import {Provider as ReduxProvider} from 'react-redux'
 
 import rootReducer from './reducers'
 import providers from "./providers";
-import App from './App'
+import App from './components/app'
 
 const {CategoriesProvider} = providers;
 

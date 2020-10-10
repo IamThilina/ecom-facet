@@ -1,7 +1,7 @@
 import React from "react";
-import {useCategories} from "./hooks";
-import CategoryItemList from "./components/category-item-list";
-import SelectedCategories from "./components/selected-categories";
+import {useCategories} from "../hooks";
+import CategoryItemList from "./category-item-list";
+import SelectedCategories from "./selected-categories";
 
 export default () => {
  const {rootId, categoryMap, parentMap} = useCategories();
