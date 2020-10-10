@@ -1,3 +1,3 @@
 type ParentMap = {[key: string]: Array<string>};
 
-export default  ParentMap;
+export default ParentMap;

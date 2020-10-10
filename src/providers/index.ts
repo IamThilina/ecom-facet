@@ -1,5 +1,5 @@
-import CategoriesProvider from "./categories-provider";
+import CategoriesProvider from './categories-provider';
 
 export default {
-    CategoriesProvider
-}
+  CategoriesProvider,
+};

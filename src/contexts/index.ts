@@ -1,5 +1,5 @@
-import CategoriesContext from "./categories-context"
+import CategoriesContext from './categories-context';
 
 export default {
-    CategoriesContext
-}
+  CategoriesContext,
+};

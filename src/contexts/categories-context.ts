@@ -1,8 +1,8 @@
-import React from "react";
-import {CategoriesContext} from "../types";
+import React from 'react';
+import { CategoriesContext } from '../types';
 
 export default React.createContext<CategoriesContext>({
-    categoryMap: null,
-    parentMap: null,
-    rootId: null,
-})
+  categoryMap: null,
+  parentMap: null,
+  rootId: null,
+});

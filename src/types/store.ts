@@ -1,7 +1,9 @@
-import type CategoryStatus from "./category-status"
-import type SelectedCategories from "./selected-categories";
+import type CategoryStatus from './category-status';
+import type SelectedCategories from './selected-categories';
 
-export default interface Store {
-    categoryStatus:  CategoryStatus;
+interface Store {
+    categoryStatus: CategoryStatus;
     selectedCategories: SelectedCategories
 }
+
+export default Store;

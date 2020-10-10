@@ -1,8 +1,10 @@
-import CategoryMap from "./category-map";
-import ParentMap from "./parent-map";
+import CategoryMap from './category-map';
+import ParentMap from './parent-map';
 
-export default interface CategoriesContext {
+interface CategoriesContext {
     categoryMap: CategoryMap | null;
     parentMap: ParentMap | null;
     rootId: string | null;
 }
+
+export default CategoriesContext;
