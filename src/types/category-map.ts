@@ -1,5 +1,5 @@
-import category from './category';
+import category from "./category";
 
-type CategoryMap = {[key: string]: category}
+type CategoryMap = { [key: string]: category };
 
 export default CategoryMap;

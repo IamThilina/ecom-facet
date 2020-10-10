@@ -1,4 +1,4 @@
-import type SelectedCategory from './selected-category';
+import type SelectedCategory from "./selected-category";
 
 type SelectedCategories = Array<SelectedCategory>;
 

@@ -1,4 +1,4 @@
-import getCategories from './get-categories';
+import getCategories from "./get-categories";
 
 export default {
   getCategories,

@@ -1,11 +1,9 @@
-import {
-  CategoryMap, ParentMap, Category, Categories,
-} from '../types';
+import { CategoryMap, ParentMap, Category, Categories } from "../types";
 
 /*
-* generate two distinct maps of categories and parents,
-* so that we can easily traverse the category graph using them
-* */
+ * generate two distinct maps of categories and parents,
+ * so that we can easily traverse the category graph using them
+ * */
 export default (categories: Categories) => {
   const categoryMap: CategoryMap = {};
   const parentMap: ParentMap = {};

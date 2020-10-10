@@ -1,17 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { createStore } from 'redux';
-import { Provider as ReduxProvider } from 'react-redux';
+import React from "react";
+import ReactDOM from "react-dom";
+import { createStore } from "redux";
+import { Provider as ReduxProvider } from "react-redux";
 
-import rootReducer from './reducers';
-import providers from './providers';
-import App from './components/app';
+import rootReducer from "./reducers";
+import providers from "./providers";
+import App from "./components/app";
 
 const { CategoriesProvider } = providers;
 
-const store = createStore(
-  rootReducer,
-);
+const store = createStore(rootReducer);
 
 const rootNode = (
   <ReduxProvider store={store}>
@@ -21,4 +19,4 @@ const rootNode = (
   </ReduxProvider>
 );
 
-ReactDOM.render(rootNode, document.querySelector('#root'));
+ReactDOM.render(rootNode, document.querySelector("#root"));
