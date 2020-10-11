@@ -5,6 +5,8 @@ import { ChangeEvent } from "react";
 import { useCategories } from "../hooks";
 import CategoryItem from "./category-item";
 import { CategoriesContext } from "../types";
+import actionTypes from "../action-types";
+
 
 interface Props {
   categoryIds: Array<string>;
@@ -23,10 +25,10 @@ const CategoryItemList: React.FunctionComponent<Props> = ({ categoryIds }) => {
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     if (event.target.checked) {
       setChecked(true);
-      dispatch({ type: "SELECT_ALL_SUB_CATEGORY", payload: categories });
+      dispatch({ type: actionTypes.SELECT_ALL_SUB_CATEGORY, payload: categories });
     } else {
       setChecked(false);
-      dispatch({ type: "REMOVE_ALL_SUB_CATEGORY", payload: categories });
+      dispatch({ type: actionTypes.REMOVE_ALL_SUB_CATEGORY, payload: categories });
     }
   };
 

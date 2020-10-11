@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import Chip from "@material-ui/core/Chip";
 import Button from "@material-ui/core/Button";
 import { Store, SelectedCategory } from "../types";
+import actionTypes from "../action-types";
 
 const SelectedCategories = () => {
   const selectedCategories = useSelector(({ selectedCategories: categories }: Store) => categories);
@@ -18,7 +19,7 @@ const SelectedCategories = () => {
                 key={category.id}
                 label={category.name}
                 className="selected-categories__category-chip"
-                onDelete={() => dispatch({ type: "REMOVE", payload: { ...category } })}
+                onDelete={() => dispatch({ type: actionTypes.REMOVE, payload: { ...category } })}
               />
             ))}
           </div>
@@ -26,7 +27,7 @@ const SelectedCategories = () => {
             className="selected-categories__remove-all-btn"
             size="small"
             variant="contained"
-            onClick={() => dispatch({ type: "REMOVE_ALL" })}
+            onClick={() => dispatch({ type: actionTypes.REMOVE_ALL })}
           >
             Remove All
           </Button>

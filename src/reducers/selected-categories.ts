@@ -1,23 +1,24 @@
 import { SelectedCategory, SelectedCategories, Action } from "../types";
+import actionTypes from "../action-types";
 
 const initialState: SelectedCategories = [];
 
 export default (state = initialState, { type, payload }: Action) => {
   switch (type) {
-    case "ADD":
+    case actionTypes.ADD:
       return [...state, payload as SelectedCategory];
-    case "REMOVE":
+    case actionTypes.REMOVE:
       return remove(state, payload);
-    case "REMOVE_ALL":
+    case actionTypes.REMOVE_ALL:
       return initialState;
-    case "SELECT_ALL_SUB_CATEGORY":
+    case actionTypes.SELECT_ALL_SUB_CATEGORY:
       return [
         ...state,
         ...payload.filter(({ id }: SelectedCategory) => {
           return state.find((category) => category.id === id) === undefined;
         }),
       ];
-    case "REMOVE_ALL_SUB_CATEGORY":
+    case actionTypes.REMOVE_ALL_SUB_CATEGORY:
       return removeAllSubCategory(state, payload);
     default:
       return state;

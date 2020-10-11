@@ -6,6 +6,8 @@ import { ChangeEvent } from "react";
 import { useCategories } from "../hooks";
 import CategoryItemList from "./category-item-list";
 import { Store, CategoriesContext } from "../types";
+import actionTypes from "../action-types";
+
 
 interface Props {
   id: string;
@@ -26,9 +28,9 @@ const CategoryItem: React.FunctionComponent<Props> = ({ id, count, name }) => {
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     if (event.target.checked) {
-      dispatch({ type: "ADD", payload: { name, id } });
+      dispatch({ type: actionTypes.ADD, payload: { name, id } });
     } else {
-      dispatch({ type: "REMOVE", payload: { name, id } });
+      dispatch({ type: actionTypes.REMOVE, payload: { name, id } });
     }
   };
 

@@ -1,24 +1,25 @@
 import { CategoryStatus, SelectedCategory, Action, SelectedCategories } from "../types";
+import actionTypes from "../action-types";
 
 const initialState: CategoryStatus = {};
 
 export default (state = initialState, { type, payload }: Action) => {
   switch (type) {
-    case "ADD":
+    case actionTypes.ADD:
       return {
         ...state,
         [payload.id]: true,
       };
-    case "REMOVE":
+    case actionTypes.REMOVE:
       return {
         ...state,
         [payload.id]: false,
       };
-    case "REMOVE_ALL":
+    case actionTypes.REMOVE_ALL:
       return initialState;
-    case "SELECT_ALL_SUB_CATEGORY":
+    case actionTypes.SELECT_ALL_SUB_CATEGORY:
       return selectAllAubCategory(state, payload);
-    case "REMOVE_ALL_SUB_CATEGORY":
+    case actionTypes.REMOVE_ALL_SUB_CATEGORY:
       return payload.reduce(
         (newStatus: CategoryStatus, category: SelectedCategory) => ({ ...newStatus, [category.id]: false }),
         state,
