@@ -84,4 +84,35 @@ describe("categoryStatus reducer", () => {
       "002": true,
     });
   });
+
+  it("handles REMOVE_ALL_SUB_CATEGORY action", () => {
+    const state = {
+      "001": true,
+      "002": true,
+      "003": true,
+    };
+    const action = {
+      type: "REMOVE_ALL_SUB_CATEGORY",
+      payload: [
+        {
+          id: "001",
+          name: "Item-1",
+        },
+        {
+          id: "002",
+          name: "Item-2",
+        },
+      ],
+    };
+
+    deepFreeze(state);
+    deepFreeze(action);
+
+    const nextState = categoryStatusReducer(state, action);
+    expect(nextState).toEqual({
+      "001": false,
+      "002": false,
+      "003": true,
+    });
+  });
 });

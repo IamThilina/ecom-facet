@@ -11,7 +11,12 @@ export default (state = initialState, { type, payload }: Action) => {
     case "REMOVE_ALL":
       return initialState;
     case "SELECT_ALL_SUB_CATEGORY":
-      return [...state, ...payload.map(({ name, id }: SelectedCategory) => ({ name, id }))];
+      return [
+        ...state,
+        ...payload.filter(({ id }: SelectedCategory) => {
+          return state.find((category) => category.id === id) === undefined;
+        }),
+      ];
     case "REMOVE_ALL_SUB_CATEGORY":
       return removeAllSubCategory(state, payload);
     default:

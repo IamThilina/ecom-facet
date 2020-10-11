@@ -20,8 +20,8 @@ export default (state = initialState, { type, payload }: Action) => {
       return selectAllAubCategory(state, payload);
     case "REMOVE_ALL_SUB_CATEGORY":
       return payload.reduce(
-        (newStatus: CategoryStatus, category: SelectedCategory) => ({ ...state, [category.id]: false }),
-        {},
+        (newStatus: CategoryStatus, category: SelectedCategory) => ({ ...newStatus, [category.id]: false }),
+        state,
       );
     default:
       return state;

@@ -101,4 +101,45 @@ describe("selectedCategories reducer", () => {
       },
     ]);
   });
+
+  it("handles REMOVE_ALL_SUB_CATEGORY action", () => {
+    const state: SelectedCategories = [
+      {
+        id: "001",
+        name: "Item-1",
+      },
+      {
+        id: "002",
+        name: "Item-2",
+      },
+      {
+        id: "003",
+        name: "Item-3",
+      },
+    ];
+    const action = {
+      type: "REMOVE_ALL_SUB_CATEGORY",
+      payload: [
+        {
+          id: "001",
+          name: "Item-1",
+        },
+        {
+          id: "002",
+          name: "Item-2",
+        },
+      ],
+    };
+
+    deepFreeze(state);
+    deepFreeze(action);
+
+    const nextState = selectedCategoriesReducer(state, action);
+    expect(nextState).toEqual([
+      {
+        id: "003",
+        name: "Item-3",
+      },
+    ]);
+  });
 });
