@@ -2,7 +2,6 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Chip from "@material-ui/core/Chip";
 import Button from "@material-ui/core/Button";
-import DeleteIcon from "@material-ui/icons/Delete";
 import { Store, SelectedCategory } from "../types";
 
 const SelectedCategories = () => {
@@ -10,29 +9,28 @@ const SelectedCategories = () => {
   const dispatch = useDispatch();
 
   return (
-    <div>
-      <h3> Selected Categories</h3>
-      {selectedCategories.length > 0 ? (
+    <div className="selected-categories">
+      {selectedCategories.length > 0 && (
         <>
-          {selectedCategories.map((category: SelectedCategory) => (
-            <Chip
-              key={category.id}
-              label={category.name}
-              onDelete={() => dispatch({ type: "REMOVE", payload: { ...category } })}
-            />
-          ))}
+          <div className="selected-categories__chips-container">
+            {selectedCategories.map((category: SelectedCategory) => (
+              <Chip
+                key={category.id}
+                label={category.name}
+                className="selected-categories__category-chip"
+                onDelete={() => dispatch({ type: "REMOVE", payload: { ...category } })}
+              />
+            ))}
+          </div>
           <Button
+            className="selected-categories__remove-all-btn"
             size="small"
             variant="contained"
-            startIcon={<DeleteIcon />}
-            style={{ marginLeft: "10px" }}
             onClick={() => dispatch({ type: "REMOVE_ALL" })}
           >
             Remove All
           </Button>
         </>
-      ) : (
-        "No Categories Selected"
       )}
     </div>
   );
