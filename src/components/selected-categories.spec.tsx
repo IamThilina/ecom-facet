@@ -25,13 +25,6 @@ describe("SelectedCategories component", () => {
     jest.spyOn(ReactRedux, "useSelector").mockReturnValue(selectedCategories);
   });
 
-  it("display a hint when there are no selected categories", () => {
-    jest.spyOn(ReactRedux, "useSelector").mockReturnValue([]);
-    const { getByText } = render(<SelectedCategories />);
-
-    expect(getByText("No Categories Selected")).toBeVisible();
-  });
-
   it("displays all the selected categories", () => {
     const { getByText } = render(<SelectedCategories />);
 

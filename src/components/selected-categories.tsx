@@ -9,7 +9,7 @@ const SelectedCategories = () => {
   const dispatch = useDispatch();
 
   return (
-    <div className="selected-categories">
+    <div className={`selected-categories ${selectedCategories.length === 0 ? "selected-categories--fixed" : ""}`}>
       {selectedCategories.length > 0 && (
         <>
           <div className="selected-categories__chips-container">

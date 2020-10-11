@@ -1,9 +1,8 @@
 .selected-categories {
   display: flex;
   flex-direction: row;
-  margin-top: 1em;
+  margin-bottom: 2em;
   margin-left: 2em;
-
 
   &__chips-container {
     margin-right: 1em;
@@ -13,7 +12,10 @@
     margin-left: 0.5em;
     margin-right: 0.5em;
   }
+}
 
+.selected-categories--fixed {
+  min-height: 2em;
 }
 
 .MuiButton-root.selected-categories__remove-all-btn {

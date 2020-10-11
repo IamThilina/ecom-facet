@@ -10,10 +10,8 @@ const App: React.FunctionComponent = () => {
     (rootId !== null && parentMap && categoryMap && (
       <div className="facet-panel">
         <h1 className="facet-panel__title">Otrium Facet Panel</h1>
-        <div>
-          <CategoryItemList categoryIds={parentMap![rootId!]} />
-        </div>
         <SelectedCategories />
+        <CategoryItemList categoryIds={parentMap![rootId!]} />
       </div>
     )) ||
     null
