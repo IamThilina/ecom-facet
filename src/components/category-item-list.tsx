@@ -15,7 +15,8 @@ const CategoryItemList: React.FunctionComponent<Props> = ({ categoryIds }) => {
   const { categoryMap }: CategoriesContext = useCategories();
   const [checked, setChecked] = React.useState(false);
 
-  const categories = React.useMemo(() => categoryIds.map((categoryId) => categoryMap![categoryId]), [
+  const categories = React.useMemo
+  (() => categoryIds.map((categoryId) => categoryMap![categoryId]), [
     categoryIds,
     categoryMap,
   ]);
@@ -31,7 +32,7 @@ const CategoryItemList: React.FunctionComponent<Props> = ({ categoryIds }) => {
   };
 
   return (
-    <div style={{ marginLeft: "30px", marginTop: "10px" }}>
+    <div className="category-item-list">
       {categoryIds && (
         <>
           <Switch checked={checked} color="default" onChange={handleChange} size="small" />
