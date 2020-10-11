@@ -28,6 +28,7 @@ This project structure is suitable for a purpose of this type. Definitely this i
 ├── dist                        # bundled & transpilled code resides here
 ├── public                      # publicly exposable assets of the project goes here
 ├── src                         # source files of the application resides here
+│   ├── action-types              # all the redux action types are defined here
 │   ├── components              # all the components, their unit tests and styles are placed here
 │   ├── contexts                # all the react contexts the application uses are defined here
 │   ├── data                    # all dummy data to mimic the back end data sources goes here
@@ -36,7 +37,9 @@ This project structure is suitable for a purpose of this type. Definitely this i
 │   ├── providers               # all the react providers the application uses are defined here
 │   ├── reducers                # all the reducers used to handle complex state management goes here
 │   ├── services                # all the methods used to fetch data from back end goes here
-│   └── types                   # all the type-script type definitions of the project goes here
+│   ├── types                   # all the type-script type definitions of the project goes here
+│   ├── index.scss              # all the component styles are imported from here
+│   └── index.tsx               # boostrap the application once loaded to browser
 │
 │── .babelrc                    # all the configurations required for transpilling goes here
 │── .eslintrc.json              # all the configurations required for linting oes here
