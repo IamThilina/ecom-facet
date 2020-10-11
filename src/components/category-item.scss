@@ -1,0 +1,13 @@
+.category-item {
+  display: block;
+  margin-left: 2em;
+
+  &__toggle-icon-container {
+    position: relative;
+    top: 0.5em;
+  }
+
+  &__toggle-icon-container--fixed {
+    margin-left: 1.5em;
+  }
+}

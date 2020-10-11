@@ -1,3 +1,4 @@
-.facet-panel {
-  margin-top: 20px;
-}
+@import "components/app";
+@import "components/category-item-list";
+@import "components/category-item";
+@import "components/selected-categories";

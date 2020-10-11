@@ -33,9 +33,19 @@ const CategoryItem: React.FunctionComponent<Props> = ({ id, count, name }) => {
   };
 
   return (
-    <div style={{ margin: "5px" }}>
-      {parentMap![id] && toggled && <RemoveCircleRounded color="action" onClick={onClick} data-testid="shrink-icon" />}
-      {parentMap![id] && !toggled && <AddCircleRounded color="action" onClick={onClick} data-testid="collapse-icon" />}
+    <div className="category-item">
+      <span
+        className={`category-item__toggle-icon-container ${
+          parentMap![id] === undefined ? "category-item__toggle-icon-container--fixed" : ""
+        }`}
+      >
+        {parentMap![id] && toggled && (
+          <RemoveCircleRounded color="action" onClick={onClick} data-testid="shrink-icon" />
+        )}
+        {parentMap![id] && !toggled && (
+          <AddCircleRounded color="action" onClick={onClick} data-testid="collapse-icon" />
+        )}
+      </span>
       <Checkbox checked={!!categoryStatus![id]} onChange={handleChange} color="default" />
       {`${name} (${count})`}
       {toggled && <CategoryItemList categoryIds={parentMap![id]} />}
