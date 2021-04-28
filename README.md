@@ -19,7 +19,7 @@
 
 #### Project Structure
 
-#####Please Note, 
+##### Please Note, 
 This project structure is suitable for a purpose of this type. Definitely this isn't gonna scale for an enterprise ready solution.
 
 ```
